@@ -24,6 +24,7 @@ alias xc='xclip -selection clipboard'
 alias v=vi
 alias l=lvim
 alias a=nvim
+alias av='NVIM_APPNAME=astrovim nvim'
 alias c=code
 alias c.='code .'
 
@@ -39,7 +40,6 @@ alias db=distrobox
 alias d=docker
 alias dc=docker-compose
 alias ap=ansible-playbook
-alias av=ansible-vault
 
 alias di='docker images'
 alias dps='docker ps'
