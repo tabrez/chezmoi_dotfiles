@@ -57,16 +57,3 @@ alias di='sudo dpkg -i'
 alias sd='poweroff || shutdown now || sudo shutdown now'
 alias ipa='ip a | grep E "(192|172)"'
 
-alias p='pnpm install'
-alias pd='pnpm install -D'
-alias prs='pnpm run start'
-alias prb='pnpm run build'
-
-# https://coreos.github.io/butane/getting-started/
-alias butane='docker run --rm --interactive       \
-              --security-opt label=disable        \
-              --volume ${PWD}:/pwd --workdir /pwd \
-              quay.io/coreos/butane:release'
-# https://hub.docker.com/r/flyinprogrammer/mkpasswd
-alias mkpasswd='docker run --rm -it flyinprogrammer/mkpasswd'
-

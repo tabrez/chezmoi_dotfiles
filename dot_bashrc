@@ -47,11 +47,6 @@ fi
 
 export PATH=$PATH:~/.local/bin:~/bin
 
-# neovim
-if [ -d ~/.local/bin/nvim/bin ]; then
-  export PATH=$PATH:~/.local/bin/nvim/bin
-fi
-
 # distrobox
 if [ -d ~/.local/bin/distrobox ]; then
   export PATH=$PATH:~/.local/bin/distrobox/bin
@@ -65,10 +60,7 @@ type direnv >/dev/null 2>&1 && eval "$(direnv hook bash)"
 . "$HOME/.asdf/asdf.sh"
 . "$HOME/.asdf/completions/asdf.bash"
 
-if [ -z "$SSH_CONNECTION" ]; then
-    if [ -z "$TMUX" ]
-    then
-        tmux -u
-    fi
+if [ -z "$SSH_CONNECTION" ] && [ -z "$TMUX" ]; then
+  tmux -u
 fi
 
