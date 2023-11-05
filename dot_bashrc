@@ -57,35 +57,10 @@ if [ -d ~/.local/bin/distrobox ]; then
   export PATH=$PATH:~/.local/bin/distrobox/bin
 fi
 
-# fnm
-if [ -d ~/.local/fnm ]; then
-  export PATH=~/.local/fnm:$PATH
-fi
-
 # powerprofilesctl set performance
 
 type zoxide >/dev/null 2>&1 && eval "$(zoxide init bash)"
 type direnv >/dev/null 2>&1 && eval "$(direnv hook bash)"
-
-
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/tabrez/mambaforge/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/home/tabrez/mambaforge/etc/profile.d/conda.sh" ]; then
-        . "/home/tabrez/mambaforge/etc/profile.d/conda.sh"
-    else
-        export PATH="/home/tabrez/mambaforge/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-
-if [ -f "/home/tabrez/mambaforge/etc/profile.d/mamba.sh" ]; then
-    . "/home/tabrez/mambaforge/etc/profile.d/mamba.sh"
-fi
-# <<< conda initialize <<<
 
 . "$HOME/.asdf/asdf.sh"
 . "$HOME/.asdf/completions/asdf.bash"
