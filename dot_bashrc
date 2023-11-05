@@ -1,0 +1,99 @@
+# If not running interactively, don't do anything
+case $- in
+    *i*) ;;
+      *) return;;
+esac
+
+EDITOR=vi
+VISUAL=vi
+
+# Control bash history
+# http://www.biostat.jhsph.edu/~afisher/ComputingClub/webfiles/KasperHansenPres/IntermediateUnix.pdf
+# https://unix.stackexchange.com/questions/48713/how-can-i-remove-duplicates-in-my-bash-history-preserving-order
+# don't put duplicate lines or lines starting with space in the history.
+export HISTCONTROL=ignoreboth:erasedups
+# big big history size
+export HISTSIZE=100000
+# set history format to include timestamps
+HISTTIMEFORMAT="%Y-%m-%d %T "
+
+# save & restore bash history in all tmux panes/windows immediately
+PROMPT_COMMAND="history -a; history -c; history -r"
+
+# when the shell exits, append to the history file instead of overwriting it
+shopt -s histappend
+# save all lines of a multiple-line command in the same history entry
+shopt -s cmdhist
+# check the window size after each command and, if necessary, update the values of LINES and COLUMNS.
+shopt -s checkwinsize
+# correct simple errors while using cd
+shopt -s cdspell
+# ignore case when auto-complete is done
+set completion-ignore-case On
+
+# Auto-complete command from history using up and down arrow keys
+# http://lindesk.com/2009/04/customize-terminal-configuration-setting-bash-cli-power-user/
+bind '"\e[A": history-search-backward'
+bind '"\e[B": history-search-forward'
+bind '"\C-p": history-search-backward'
+bind '"\C-n": history-search-forward'
+
+# Change command prompt
+export PS1="\[\e[38;5;35m\][\h:\[\e[38;5;33m\]\W\[\e[38;5;35m\]]\n➜ \[$(tput sgr0)\]"
+
+if [ -f ~/.aliases ]; then
+   . ~/.aliases
+fi
+
+export PATH=$PATH:~/.local/bin:~/bin
+
+# neovim
+if [ -d ~/.local/bin/nvim/bin ]; then
+  export PATH=$PATH:~/.local/bin/nvim/bin
+fi
+
+# distrobox
+if [ -d ~/.local/bin/distrobox ]; then
+  export PATH=$PATH:~/.local/bin/distrobox/bin
+fi
+
+# fnm
+if [ -d ~/.local/fnm ]; then
+  export PATH=~/.local/fnm:$PATH
+fi
+
+# powerprofilesctl set performance
+
+type zoxide >/dev/null 2>&1 && eval "$(zoxide init bash)"
+type direnv >/dev/null 2>&1 && eval "$(direnv hook bash)"
+
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/tabrez/mambaforge/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/tabrez/mambaforge/etc/profile.d/conda.sh" ]; then
+        . "/home/tabrez/mambaforge/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/tabrez/mambaforge/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+
+if [ -f "/home/tabrez/mambaforge/etc/profile.d/mamba.sh" ]; then
+    . "/home/tabrez/mambaforge/etc/profile.d/mamba.sh"
+fi
+# <<< conda initialize <<<
+
+. "$HOME/.asdf/asdf.sh"
+. "$HOME/.asdf/completions/asdf.bash"
+
+if [ -z "$SSH_CONNECTION" ]; then
+    if [ -z "$TMUX" ]
+    then
+        tmux -u
+    fi
+fi
+

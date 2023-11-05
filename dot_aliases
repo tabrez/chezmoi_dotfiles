@@ -1,0 +1,72 @@
+#!/bin/bash
+
+alias g='git'
+alias gst='git status'
+alias gco='git checkout'
+alias ga='git add'
+alias gd='git diff'
+alias gc='git commit'
+alias gp='git push'
+alias gl='git pull'
+alias gs='git stash'
+alias glg='git log --pretty=format:"%C(magenta)%h%Creset -%C(red)%d%Creset %s %C(dim green)(%cr) [%an]" --abbrev-commit -30'
+
+alias rm='echo maybe use tp instead; rm -i'
+alias mv='mv -i'
+alias ln='ln -i'
+alias cp='cp -i'
+alias md='mkdir -p'
+alias ls='ls --color=auto'
+alias ll='ls -alhF --time-style=long-iso --color=auto'
+alias tp='trash-put'
+alias xc='xclip -selection clipboard'
+
+alias v=vi
+alias l=lvim
+alias a=nvim
+alias c=code
+alias c.='code .'
+
+alias k=exa
+alias kc='exa -abhgHliS'
+# alias ll='exa -alhF'
+alias fd='fdfind'
+alias bat='batcat'
+
+alias tu='tmux -u'
+alias mpc=multipass
+alias db=distrobox
+alias d=docker
+alias dc=docker-compose
+alias ap=ansible-playbook
+alias av=ansible-vault
+
+alias di='docker images'
+alias dps='docker ps'
+alias dex='docker exec'
+alias drun='docker run'
+alias dl='docker logs'
+alias dstop='docker stop'
+alias drm='docker rm'
+alias drmi='docker rmi'
+
+alias i='sudo apt install -y'
+alias u='sudo apt update && sudo apt upgrade -y'
+alias up='u && sudo apt upgrade -y && snap refresh && flatpak update -y'
+alias di='sudo dpkg -i'
+alias sd='poweroff || shutdown now || sudo shutdown now'
+alias ipa='ip a | grep E "(192|172)"'
+
+alias p='pnpm install'
+alias pd='pnpm install -D'
+alias prs='pnpm run start'
+alias prb='pnpm run build'
+
+# https://coreos.github.io/butane/getting-started/
+alias butane='docker run --rm --interactive       \
+              --security-opt label=disable        \
+              --volume ${PWD}:/pwd --workdir /pwd \
+              quay.io/coreos/butane:release'
+# https://hub.docker.com/r/flyinprogrammer/mkpasswd
+alias mkpasswd='docker run --rm -it flyinprogrammer/mkpasswd'
+

@@ -1,0 +1,7 @@
+# BEGIN ANSIBLE MANAGED BLOCK
+Host *
+  StrictHostKeyChecking no
+  UserKnownHostsFile /dev/null
+  CheckHostIP no
+  ForwardX11 yes
+# END ANSIBLE MANAGED BLOCK
