@@ -55,5 +55,5 @@ alias u='sudo apt update && sudo apt upgrade -y'
 alias up='u && sudo apt upgrade -y && snap refresh && flatpak update -y'
 alias di='sudo dpkg -i'
 alias sd='poweroff || shutdown now || sudo shutdown now'
-alias ipa='ip a | grep E "(192|172)"'
+alias ipa='ip a | grep -E "(192|172)"'
 
