@@ -23,8 +23,7 @@ alias xc='xclip -selection clipboard'
 
 alias v=vi
 alias l=lvim
-alias a=nvim
-alias av='NVIM_APPNAME=astrovim nvim'
+alias a='NVIM_APPNAME=astrovim nvim'
 alias c=code
 alias c.='code .'
 
