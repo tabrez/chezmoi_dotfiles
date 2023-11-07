@@ -94,7 +94,7 @@ fi
 . "$HOME/.asdf/asdf.sh"
 . "$HOME/.asdf/completions/asdf.bash"
 
-if [ -z "$SSH_CONNECTION" ] && [ -z "$TMUX" ]; then
+if [ -z "$SSH_CONNECTION" ] && [ -z "$TMUX" ] && type tmux >/dev/null 2>&1; then
   tmux -u
 fi
 

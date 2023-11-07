@@ -36,6 +36,7 @@ alias bat='batcat'
 alias tu='tmux -u'
 alias mpc=multipass
 alias db=distrobox
+alias tb=toolbox
 alias d=docker
 alias dc=docker-compose
 alias ap=ansible-playbook
