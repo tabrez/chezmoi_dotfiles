@@ -1,19 +1,19 @@
 // Place your key bindings in this file to override the defaults
 [
   {
-    "key": "ctrl+p",
+    "key": "ctrl+shift+p",
     "command": "workbench.action.quickOpen",
     "when": "editorTextFocus && vim.active && !inDebugRepl"
   },
   {
-    "key": "ctrl+o",
+    "key": "ctrl+shift+o",
     "command": "workbench.action.files.openFile",
     "when": "editorTextFocus && vim.active && !inDebugRepl"
   },
   {
-    "key": "ctrl+b",
+    "key": "ctrl+shift+b",
     "command": "workbench.action.toggleSidebarVisibility",
-    "when": "editorTextFocus && vim.active && !inDebugRepl"
+    "when": "!inDebugRepl"
   },
   {
     "key": "ctrl+shift+c",
@@ -31,7 +31,7 @@
     "when": "editorTextFocus && vim.active && !inDebugRepl"
   },
   {
-    "key": "ctrl+w",
+    "key": "ctrl+shift+w",
     "command": "workbench.action.closeActiveEditor"
   }
 ]

@@ -11,7 +11,6 @@
   "workbench.colorTheme": "GitHub Dark",
   "workbench.iconTheme": "vscode-icons",
   "keyboard.dispatch": "keyCode",
-
   "editor.rulers": [
     88
   ],
@@ -29,11 +28,9 @@
   "editor.tabSize": 2,
   "editor.insertSpaces": true,
   "editor.detectIndentation": false,
-
   "typescript.referencesCodeLens.enabled": true,
   "typescript.implementationsCodeLens.enabled": true,
   "typescript.updateImportsOnFileMove.enabled": "always",
-
   "files.autoSave": "afterDelay",
   "files.autoSaveDelay": 5000,
   "files.eol": "\n",
@@ -55,15 +52,13 @@
     "**/.venv/**": true,
     "**/ipynb_checkpoints/**": true
   },
-
   "explorer.confirmDragAndDrop": false,
   "git.confirmSync": false,
   "git.openRepositoryInParentFolders": "never",
-
   "notebook.output.scrolling": true,
   "notebook.output.wordWrap": true,
   "jupyter.askForKernelRestart": false,
-  "jupyter.interactiveWindow.creationMode": "perFile"
+  "jupyter.interactiveWindow.creationMode": "perFile",
   "python.languageServer": "Pylance",
   "[python]": {
     // "editor.formatOnSave": true,
@@ -75,7 +70,7 @@
   },
   "vscode-neovim.neovimExecutablePaths.linux": "nvim",
   "extensions.experimental.affinity": {
-      "asvetliakov.vscode-neovim": 1
-  }
+    "asvetliakov.vscode-neovim": 1
+  },
+  "vscode-neovim.neovimInitVimPaths.linux": "~/.vimrc"
 }
-
