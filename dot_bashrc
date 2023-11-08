@@ -62,7 +62,7 @@ if [ -d ~/.local/fnm ]; then
   export PATH=~/.local/fnm:$PATH
 fi
 
-powerprofilesctl set performance
+# powerprofilesctl set performance
 
 show_virtual_env() {
   if [[ -n "$VIRTUAL_ENV" && -n "$DIRENV_DIR" ]]; then

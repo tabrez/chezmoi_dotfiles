@@ -25,6 +25,7 @@ alias v=vi
 alias l=lvim
 alias a='NVIM_APPNAME=astrovim nvim'
 alias c=code
+alias cf='flatpak run com.visualstudio.code --password-store=gnome-libsecret'
 alias c.='code .'
 
 alias k=exa
@@ -37,6 +38,7 @@ alias tu='tmux -u'
 alias mpc=multipass
 alias db=distrobox
 alias tb=toolbox
+alias tbm='toolbox enter main'
 alias d=docker
 alias dc=docker-compose
 alias ap=ansible-playbook
