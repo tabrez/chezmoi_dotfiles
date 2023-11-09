@@ -8,7 +8,7 @@
   "security.workspace.trust.enabled": false,
   "window.title": "${activeEditorMedium}${separator}${rootName}",
   "search.showLineNumbers": true,
-  "workbench.colorTheme": "GitHub Dark",
+  "workbench.colorTheme": "Monokai",
   "workbench.iconTheme": "vscode-icons",
   "keyboard.dispatch": "keyCode",
   "editor.rulers": [
@@ -68,9 +68,11 @@
     },
     "editor.defaultFormatter": "charliermarsh.ruff"
   },
-  "vscode-neovim.neovimExecutablePaths.linux": "nvim",
+  // "vscode-neovim.neovimExecutablePaths.linux": "nvim",
   "extensions.experimental.affinity": {
     "asvetliakov.vscode-neovim": 1
   },
-  "vscode-neovim.neovimInitVimPaths.linux": "~/.vimrc"
+  "vim.overrideCopy": false,
+  "vim.useSystemClipboard": true,
+  // "vscode-neovim.neovimInitVimPaths.linux": "~/.vimrc"
 }

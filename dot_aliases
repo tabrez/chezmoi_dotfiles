@@ -52,6 +52,8 @@ alias dstop='docker stop'
 alias drm='docker rm'
 alias drmi='docker rmi'
 
+alias fp=flatpak
+
 alias i='sudo apt install -y'
 alias u='sudo apt update && sudo apt upgrade -y'
 alias up='u && sudo apt upgrade -y && snap refresh && flatpak update -y'
