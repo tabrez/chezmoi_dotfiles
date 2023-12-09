@@ -23,20 +23,20 @@ alias xc='xclip -selection clipboard'
 
 alias v=vi
 alias l=lvim
-alias a='NVIM_APPNAME=astrovim nvim'
+alias a='NVIM_APPNAME=astronvim nvim'
 alias c=code
-alias cf='flatpak run com.visualstudio.code --password-store=gnome-libsecret'
 alias c.='code .'
 
 alias k=exa
 alias kc='exa -abhgHliS'
-# alias ll='exa -alhF'
 alias fd='fdfind'
 alias bat='batcat'
 
 alias tu='tmux -u'
 alias mpc=multipass
 alias db=distrobox
+alias dbm='distrobox enter main'
+alias h=distrobox-host-exec
 alias tb=toolbox
 alias tbm='toolbox enter main'
 alias d=docker
@@ -60,4 +60,3 @@ alias up='u && sudo apt upgrade -y && snap refresh && flatpak update -y'
 alias di='sudo dpkg -i'
 alias sd='poweroff || shutdown now || sudo shutdown now'
 alias ipa='ip a | grep -E "(192|172)"'
-

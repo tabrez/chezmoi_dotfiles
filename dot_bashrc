@@ -1,7 +1,7 @@
 # If not running interactively, don't do anything
 case $- in
-    *i*) ;;
-      *) return;;
+	*i*) ;;
+	*) return ;;
 esac
 
 EDITOR=vi
@@ -42,59 +42,24 @@ bind '"\C-n": history-search-forward'
 export PS1="\[\e[38;5;35m\][\h:\[\e[38;5;33m\]\W\[\e[38;5;35m\]]\n➜ \[$(tput sgr0)\]"
 
 if [ -f ~/.aliases ]; then
-   . ~/.aliases
+	. ~/.aliases
 fi
 
-export PATH=$PATH:~/.local/bin:~/bin
-
-# neovim
-if [ -d ~/.local/bin/nvim/bin ]; then
-  export PATH=$PATH:~/.local/bin/nvim/bin
-fi
-
-# distrobox
-if [ -d ~/.local/bin/distrobox ]; then
-  export PATH=$PATH:~/.local/bin/distrobox/bin
-fi
-
-# fnm
-if [ -d ~/.local/fnm ]; then
-  export PATH=~/.local/fnm:$PATH
-fi
-
-# powerprofilesctl set performance
+export PATH=$PATH:~/.local/bin
 
 show_virtual_env() {
-  if [[ -n "$VIRTUAL_ENV" && -n "$DIRENV_DIR" ]]; then
-    echo "($(basename $VIRTUAL_ENV))"
-  fi
+	if [[ -n "$VIRTUAL_ENV" && -n "$DIRENV_DIR" ]]; then
+		echo "($(basename $VIRTUAL_ENV))"
+	fi
 }
+
 type direnv >/dev/null 2>&1 && eval "$(direnv hook bash)" && export -f show_virtual_env && PS1='$(show_virtual_env)'$PS1
 type zoxide >/dev/null 2>&1 && eval "$(zoxide init bash)"
-
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/tabrez/mambaforge/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/home/tabrez/mambaforge/etc/profile.d/conda.sh" ]; then
-        . "/home/tabrez/mambaforge/etc/profile.d/conda.sh"
-    else
-        export PATH="/home/tabrez/mambaforge/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-
-if [ -f "/home/tabrez/mambaforge/etc/profile.d/mamba.sh" ]; then
-    . "/home/tabrez/mambaforge/etc/profile.d/mamba.sh"
-fi
-# <<< conda initialize <<<
 
 . "$HOME/.asdf/asdf.sh"
 . "$HOME/.asdf/completions/asdf.bash"
 
 if [ -z "$SSH_CONNECTION" ] && [ -z "$TMUX" ] && type tmux >/dev/null 2>&1; then
-  tmux -u
+	tmux -u
 fi
 
